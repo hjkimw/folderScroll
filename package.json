@@ -1,0 +1,10 @@
+{
+  "description": "",
+  "type": "module",
+  "scripts":{
+    "sass-w": "sass -w scss/style.scss css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.7"
+  }
+}
