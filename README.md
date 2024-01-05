@@ -4,7 +4,10 @@
 
 <br>
 
-<img src="./demo.gif" width="800px"/>
+<img src="./img/demo.gif" width="800px"/>
+
+추가되는 section 요소들 구조는 다음과 같습니다.
+<img src="./img/구조설명.png" width="600px"/>
 
 <br>
 
