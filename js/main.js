@@ -1,14 +1,17 @@
 import { FolderScroll } from './FolderScroll.js';
 
+/* 생성할 콘텐츠 요소 개수 */
+const sectionLength = 5;
+
 /* 동적으로 요소 추가 */
-const init = (() =>{
-  for(let i=1; i<=5; i++){
+const init = (stickyTarget) =>{
+  for(let i=1; i<=sectionLength; i++){
     const $section = document.createElement('section');
     $section.className = `section section-${i}`;
   
     const $h2 = document.createElement('h2');
     $h2.className = 'title';
-    $h2.textContent = `Lorem ipsum dolor ${i}`;
+    $h2.textContent = `content ${i}`;
   
     const $div = document.createElement('div');
     $div.className = 'content';
@@ -18,11 +21,17 @@ const init = (() =>{
   
     $div.append($img); 
     $section.append($h2, $div);
-    document.querySelector('.main-content-1 .sticky').append($section);
+    document.querySelector(stickyTarget).append($section);
   }
-})();
+}
+init('.sticky-list');
 
-const folderScroll = new FolderScroll('.main-content-1', '.sticky');
+const folderScroll = new FolderScroll({ 
+  wrapper:'.main-content', 
+  stickyWrapper: '.sticky-list',
+  title: '.title',
+  content:'.content',
+});
 const lenis = new Lenis();
 
 lenis.on('scroll', _ => {});
